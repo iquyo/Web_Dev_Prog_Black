@@ -90,20 +90,28 @@
     <!-- sorting menu -->
     <div class="offcanvas offcanvas-start bg-secondary-subtle" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="sidemenu" aria-labelledby="sideMenuLabel">
       <div class="offcanvas-header bg-secondary">
-        <h5 class="offcanvas-title" id="sideMenuLabel">Menu</h5>
+        <h3 class="offcanvas-title" id="sideMenuLabel">Menu</h3>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
+        <h4 class="mb-3">Filters:</h4>
+        <div class="mb-3">
+          <label class="form-label ms-auto">Genre:</label>
+          <button type="button" class="btn btn-secondary ms-auto">Pop</button>
+          <button type="button" class="btn btn-secondary ms-auto">Rock</button>
+          <button type="button" class="btn btn-secondary ms-auto">R&B</button>
+          <button type="button" class="btn btn-secondary ms-auto">Other</button>
+        </div>
+        <div class="mb-3">
+          <label class="form-label ms-auto">Net Worth:</label>
+          <button type="button" class="btn btn-secondary ms-auto">&lt;1M</button>
+          <button type="button" class="btn btn-secondary ms-auto">1M-10M</button>
+          <button type="button" class="btn btn-secondary ms-auto">&gt;10M</button>
+        </div>
         <div class="mb-3">
           <label for="searchInput" class="form-label">Search</label>
           <input type="query" class="form-control" id="searchInput">
           <button type="button" class="btn btn-success mt-3">Submit</button>
-        </div>
-        <div class="mb-3">
-          <label class="form-label ms-auto">Sort By: </label>
-          <button type="button" class="btn btn-secondary ms-auto">Name</button>
-          <button type="button" class="btn btn-secondary ms-auto">Popularity</button>
-          <button type="button" class="btn btn-secondary ms-auto">Relevance</button>
         </div>
       </div>
     </div>
@@ -111,87 +119,8 @@
 
     <!-- rows of cards -->
     <div class="container">
-      <div class="row gy-3">
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
+      <div class="row gy-3", id="artist_cards">
+        
       </div>
     </div>
 

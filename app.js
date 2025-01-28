@@ -26,23 +26,13 @@ function readData(path, callback) {
     });
 };
 
-readData(path.join(__dirname, 'Data/data_artists.json'), (err, artist) => {
-    if (err) {
-        console.log(err);
-        return;
-    }
-    console.log(artist[0].name);
-});
-
-const newArtist = {
-    "id": 2,
-    "name": "Dua Lipa",
-    "song": "Levitating",
-    "followers": 87000000,
-    "description": "Rising star."
-}
-
-const newArtistString = JSON.stringify(newArtist);
+// readData(path.join(__dirname, 'Data/data_artists.json'), (err, artist) => {
+//     if (err) {
+//         console.log(err);
+//         return;
+//     }
+//     console.log(artist[0].name);
+// });
 
 
 app.get('/artists', (req, res) => {
@@ -52,7 +42,11 @@ app.get('/artists', (req, res) => {
             res.status(500).send("Error: " + err);
             return;
         }
-        res.status(200).send(artists);
+        let data = []
+        for (const artist of artists) {
+            data.push({"name": artist.name, "ID": artist.id})
+        }
+        res.status(200).send(data);
     });
 });
 
@@ -62,6 +56,9 @@ app.get('/artists/:id', (req, res) => {
         if (err) {
             res.status(500).send("Error: " + err);
             return;
+        }
+        if (!artist[id]) {
+            res.status(400).send("Error, no item found with given ID.")
         }
         res.status(200).send(artist[id]);
     });
@@ -91,7 +88,11 @@ app.get('/comments', (req, res) => {
             res.status(500).send("Error: " + err);
             return;
         }
-        res.status(200).send(comments);
+        let data = []
+        for (const comment of comments) {
+            data.push({"for": comment.for, "ID": comment.id})
+        }
+        res.status(200).send(data);
     });
 });
 
@@ -101,6 +102,9 @@ app.get('/comments/:id', (req, res) => {
         if (err) {
             res.status(500).send("Error: " + err);
             return;
+        }
+        if (!comment[id]) {
+            res.status(400).send("Error, no item found with given ID.")
         }
         res.status(200).send(comment[id]);
     });
@@ -130,3 +134,4 @@ app.all('*', (req, res) => {
 
 
 app.listen(PORT);
+console.log("App running on: http://127.0.0.1:" + PORT)

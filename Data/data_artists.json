@@ -3,8 +3,99 @@
         "id": 0,
         "name": "Rick Astley",
         "song": "Never Gonna Give You Up",
-        "followers": 683000,
+        "networth": 683000,
+        "genre": "Pop",
         "description": "English singer known for his hit single 'Never Gonna Give You Up'. Most popular between the late 1980s and the early 1990s when he reached the top of the UK charts.",
+        "image": null
+    },
+    {
+        "id": 1,
+        "name": "Dua Lipa",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
+        "image": null
+    },
+    {
+        "id": 2,
+        "name": "Elton John",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
+        "image": null
+    },
+    {
+        "id": 3,
+        "name": "Harry Styles",
+        "song": "Never Gonna Give You Up",
+        "networth": 683000,
+        "genre": "Pop",
+        "description": "English singer known for his hit single 'Never Gonna Give You Up'. Most popular between the late 1980s and the early 1990s when he reached the top of the UK charts.",
+        "image": null
+    },
+    {
+        "id": 4,
+        "name": "Adele",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
+        "image": null
+    },
+    {
+        "id": 5,
+        "name": "Sam Smith",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
+        "image": null
+    },
+    {
+        "id": 6,
+        "name": "Elvis Costello",
+        "song": "Never Gonna Give You Up",
+        "networth": 683000,
+        "genre": "Pop",
+        "description": "English singer known for his hit single 'Never Gonna Give You Up'. Most popular between the late 1980s and the early 1990s when he reached the top of the UK charts.",
+        "image": null
+    },
+    {
+        "id": 7,
+        "name": "Eric Clapton",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
+        "image": null
+    },
+    {
+        "id": 8,
+        "name": "Ed Sheeran",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
+        "image": null
+    },
+    {
+        "id": 9,
+        "name": "Billy Ocean",
+        "song": "Never Gonna Give You Up",
+        "networth": 683000,
+        "genre": "Pop",
+        "description": "English singer known for his hit single 'Never Gonna Give You Up'. Most popular between the late 1980s and the early 1990s when he reached the top of the UK charts.",
+        "image": null
+    },
+    {
+        "id": 10,
+        "name": "George Michael",
+        "song": "Levitating",
+        "networth": 83000000,
+        "genre": "Pop",
+        "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
         "image": null
     }
 ]
