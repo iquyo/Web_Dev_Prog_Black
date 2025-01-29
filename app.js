@@ -44,7 +44,7 @@ app.get('/artists', (req, res) => {
         }
         let data = []
         for (const artist of artists) {
-            data.push({"name": artist.name, "ID": artist.id, "genre": artist.genre, "networth": artist.networth, "image": artist.image})
+            data.push({"name": artist.name, "ID": artist.id, "genre": artist.genre, "networth": artist.networth, "image": artist.imagesource})
         }
         res.status(200).send(data);
     });
@@ -58,7 +58,7 @@ app.get('/artists/:id', (req, res) => {
             return;
         }
         if (!artist[id]) {
-            res.status(400).send("Error, no item found with given ID.")
+            res.status(400).send("Error: Bad request, no item found with given ID.")
         }
         res.status(200).send(artist[id]);
     });
@@ -70,7 +70,7 @@ app.post('/artists/:id', (req, res) => {
     let name = req.body;
 
     if (!name) {
-        res.status(418).send({ message: 'No name provided.' })
+        res.status(400).send({ message: 'Error: Bad request, incomplete/missing request parameters.' })
     }
 
     res.send({
@@ -104,7 +104,7 @@ app.get('/comments/:id', (req, res) => {
             return;
         }
         if (!comment[id]) {
-            res.status(400).send("Error, no item found with given ID.")
+            res.status(400).send("Error: Bad request, no item found with given ID.")
         }
         res.status(200).send(comment[id]);
     });
@@ -115,7 +115,7 @@ app.post('/comments/submit/', (req, res) => {
     let content = req.body;
 
     if (!content) {
-        res.status(418).send({ message: 'No message provided.' })
+        res.status(400).send({ message: 'Error: Bad request, incomplete/missing request parameters.' })
     }
     else {
         res.status(200).send()

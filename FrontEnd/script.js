@@ -22,10 +22,10 @@ initrequest.onload = function() {
                     if (detailedRequest.status == 200) {
                         details = JSON.parse(detailedRequest.responseText);
     
-                        editDetailedModal(details.name, details.song, details.networth, details.genre, details.description, details.image);
+                        editDetailedModal(details.name, details.song, details.networth, details.genre, details.description, details.imagesource, details.imageattr);
                     }
                     else{
-                        alert("Error 408: Data fetch timed out. Please try again.");
+                        alert("Error 400: Data fetch timed out. Please try again.");
                     }
                 }
                 detailedRequest.send();
@@ -33,17 +33,17 @@ initrequest.onload = function() {
         })
     }
     else{
-        alert("Error 408: Data fetch timed out. Please try again.");
+        alert("Error 400: Data fetch timed out. Please try again.");
     };
 };
 
-function createNewCard(name, image, id) {
+function createNewCard(name, imagesource, id) {
     let newCard = document.createElement("div");
         newCard.classList.add("col-md-3");
         
         newCard.innerHTML = 
             "<div class='card'>\
-                <img src='" + image + "' class='card-img-top' alt='An image of " + name + ".'>\
+                <img src='" + imagesource + "' class='card-img-top' alt='An image of " + name + ".'>\
                 <div class='card-body'>\
                     <h5 class='card-title'>" + name + "</h5>\
                     <button type='button' class='btn btn-primary ms-auto cardbtn' id='" + id + "' data-bs-toggle='modal' data-bs-target='#detailedPage'>\
@@ -55,15 +55,18 @@ function createNewCard(name, image, id) {
     return newCard
 }
 
-function editDetailedModal(name, song, networth, genre, description, image) {
+function editDetailedModal(name, song, networth, genre, description, imagesource, imageattr) {
 
     let namelabel = document.getElementById('detailedPageLabel');
+    let imagelabel = document.getElementById('cardImage');
+    let attrlabel = document.getElementById('attrLabel')
     let songlabel = document.getElementById('song');
     let networthlabel = document.getElementById('networth');
     let genrelabel = document.getElementById('genre');
     let descriptionlabel = document.getElementById('description');
     let commentslabel = document.getElementById('comments');
 
+    console.log(imagelabel)
     commentslabel.innerHTML = "<div id='comments'></div>"
     const commentRequest = new XMLHttpRequest();
     commentRequest.open('GET', '/comments')
@@ -83,11 +86,10 @@ function editDetailedModal(name, song, networth, genre, description, image) {
                             detailedComment = JSON.parse(commentDetailedRequest.responseText);
                             const outputComment = document.createElement("p");
                             outputComment.innerHTML = "<p>" + detailedComment.author + ": " + detailedComment.content + "</p>"
-                            console.log(outputComment)
                             commentslabel.appendChild(outputComment);
                         }
                         else{
-                            alert("Error 408: Data fetch timed out. Please try again.");
+                            alert("Error 400: Data fetch timed out. Please try again.");
                         };
                     }
                     commentDetailedRequest.send();
@@ -98,12 +100,14 @@ function editDetailedModal(name, song, networth, genre, description, image) {
             }
         }
         else{
-            alert("Error 408: Data fetch timed out. Please try again.");
+            alert("Error 400: Data fetch timed out. Please try again.");
         };
     }
     commentRequest.send();
 
     namelabel.innerHTML = "<h1 class='modal-title fs-5' id='detailedPageLabel'>" + name + "</h1>"
+    imagelabel.innerHTML = "<img src='" + imagesource + "' class='img-fluid' id='cardImage'>"
+    attrlabel.innerHTML = "<p id=attrlabel>" + imageattr + "</p>"
     songlabel.innerHTML = "<p id='song'>" + song + "</p>"
     networthlabel.innerHTML = "<p id='networth'>" + networth + "</p>"
     genrelabel.innerHTML = "<p id='genre'>" + genre + "</p>"
@@ -121,7 +125,7 @@ window.addEventListener("load", function() {
         const uploadCommentRequest = new XMLHttpRequest();
         uploadCommentRequest.open('POST', '/comments/submit');
 
-        // START HERE!! CONTINUE MAKING THE COMMENT UPLOAD SYSTEM AND ALSO FLESH OUT BACK END POST REQUESTS TO WRITE TO JSON AND STORE IMAGES
+        // START HERE!! CONTINUE MAKING THE COMMENT UPLOAD SYSTEM AND ALSO FLESH OUT BACK END POST REQUESTS TO WRITE TO JSON
         uploadCommentRequest.onload = function() {
             console.log(uploadCommentRequest)
             if (uploadCommentRequest.status == 200) {
@@ -204,7 +208,7 @@ window.addEventListener("load", function() {
                                 if (detailedRequest.status == 200) {
                                     details = JSON.parse(detailedRequest.responseText);
                 
-                                    editDetailedModal(details.name, details.song, details.networth, details.genre, details.description, details.image);
+                                    editDetailedModal(details.name, details.song, details.networth, details.genre, details.description, details.imagesource, details.imageattr);
                                 }
                             }
                             detailedRequest.send();
@@ -212,7 +216,7 @@ window.addEventListener("load", function() {
                     })
                 }
                 else{
-                    alert("Error 408: Data fetch timed out. Please try again.");
+                    alert("Error 400: Data fetch timed out due to bad request. Please try again.");
                 };
             }
             filteredRequest.send();

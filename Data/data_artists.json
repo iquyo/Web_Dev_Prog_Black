@@ -6,7 +6,8 @@
         "networth": 16000000,
         "genre": "Pop",
         "description": "English singer known for his hit single 'Never Gonna Give You Up'. Most popular between the late 1980s and the early 1990s when he reached the top of the UK charts.",
-        "image": null
+        "imagesource": "Media/0.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Rick_Astley_2023.jpg'>Raph_PH</a>, <a href='https://creativecommons.org/licenses/by/2.0'>CC BY 2.0</a>, via Wikimedia Commons"
     },
     {
         "id": 1,
@@ -15,7 +16,8 @@
         "networth": 128000000,
         "genre": "Pop",
         "description": "Popular English and Albanian singer, known for her upbeat pop songs.",
-        "image": null
+        "imagesource": "Media/1.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Dua_Lipa_2022_(cropped).jpg'>Raph_PH</a>, <a href='https://creativecommons.org/licenses/by/2.0'>CC BY 2.0</a>, via Wikimedia Commons"
     },
     {
         "id": 2,
@@ -24,7 +26,8 @@
         "networth": 650000000,
         "genre": "Pop",
         "description": "Critically acclaimed singer during the 1970s. His music shaped the modern music industry and remains popular to this day. ",
-        "image": null
+        "imagesource": "Media/2.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:20240320SM2925_(Elton_John_2024_Gershwin_Prize_for_Popular_Song_portrait_crop).jpg'>Library of Congress Life</a>, CC0, via Wikimedia Commons"
     },
     {
         "id": 3,
@@ -33,7 +36,8 @@
         "networth": 249000000,
         "genre": "Pop",
         "description": "Originating from popular boy band 'One Direction', Harry Styles is a successful solo artist who also happens to be a large influencer in pop culture.",
-        "image": null
+        "imagesource": "Media/3.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Harry_Styles_November_2014.jpg'>Eva Rinaldi</a>, <a href='https://creativecommons.org/licenses/by-sa/2.0'>CC BY-SA 2.0</a>, via Wikimedia Commons"
     },
     {
         "id": 4,
@@ -42,7 +46,8 @@
         "networth": 220000000,
         "genre": "Other",
         "description": "Known for her incredible vocals, Adele is recognized as a British icon who holds multiple Grammy Awards.",
-        "image": null
+        "imagesource": "Media/4.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Adele_-_Live_2016,_Glasgow_SSE_Hydro_03.jpg'>marcen27 from Glasgow, UK</a>, <a href='https://creativecommons.org/licenses/by/2.0'>CC BY 2.0</a>, via Wikimedia Commons"
     },
     {
         "id": 5,
@@ -51,7 +56,8 @@
         "networth": 45000000,
         "genre": "Pop",
         "description": "English songwriter and singer, rose to popularity relatively recently in the UK.",
-        "image": null
+        "imagesource": "Media/5.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Sam_Smith_Lollapalooza_2015-9_(cropped).jpg'>© pitpony.photography</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0'>CC BY-SA 3.0</a>, via Wikimedia Commons"
     },
     {
         "id": 6,
@@ -60,7 +66,8 @@
         "networth": 70000000,
         "genre": "Rock",
         "description": "One of the most popular British rock musicians. His songs are a popular choice amongst modern cover bands.",
-        "image": null
+        "imagesource": "Media/6.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Elvis_Costello_(51408598177).jpg'>Matt Johnson from Omaha, Nebraska, United States</a>, <a href='https://creativecommons.org/licenses/by/2.0'>CC BY 2.0</a>, via Wikimedia Commons"
     },
     {
         "id": 7,
@@ -69,7 +76,8 @@
         "networth": 450000000,
         "genre": "Rock",
         "description": "One of the most influential rock guitarists of all time, consistently ranking within the top 5 guitarists of all time across multiple charts.",
-        "image": null
+        "imagesource": "Media/7.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Eric_Clapton_1.jpg'>Majvdl</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0'>CC BY-SA 3.0</a>, via Wikimedia Commons"
     },
     {
         "id": 8,
@@ -78,7 +86,8 @@
         "networth": 373000000,
         "genre": "Pop",
         "description": "Known for combining folk and pop music, Ed Sheeran is one of the most popular singers among the current generation of teenagers and young adults.",
-        "image": null
+        "imagesource": "Media/8.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Ed_Sheeran-6956_(cropped).jpg'>Harald Krichel</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0'>CC BY-SA 3.0</a>, via Wikimedia Commons"
     },
     {
         "id": 9,
@@ -87,7 +96,8 @@
         "networth": 12000000,
         "genre": "R&B",
         "description": "Trinidadian-British singer, known during the 1970s and 1980s for his soul and pop music.",
-        "image": null
+        "imagesource": "Media/9.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:Billy_Ocean_in_january_2012_(cropped).jpg'>Eva Rinaldi</a>, <a href='https://creativecommons.org/licenses/by-sa/2.0'>CC BY-SA 2.0</a>, via Wikimedia Commons"
     },
     {
         "id": 10,
@@ -96,6 +106,7 @@
         "networth": 100000000,
         "genre": "Pop",
         "description": "British pop culture icon, commonly regarded as one of the greatest singers of all time.",
-        "image": null
+        "imagesource": "Media/10.jpg",
+        "imageattr": "<a href='https://commons.wikimedia.org/wiki/File:George_Michael_circa_1984-1985.jpg'>Louise Palanker</a>, <a href='https://creativecommons.org/licenses/by-sa/2.0'>CC BY-SA 2.0</a>, via Wikimedia Commons"
     }
 ]
