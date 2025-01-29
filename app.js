@@ -44,7 +44,7 @@ app.get('/artists', (req, res) => {
         }
         let data = []
         for (const artist of artists) {
-            data.push({"name": artist.name, "ID": artist.id})
+            data.push({"name": artist.name, "ID": artist.id, "genre": artist.genre, "networth": artist.networth, "image": artist.image})
         }
         res.status(200).send(data);
     });
@@ -110,14 +110,17 @@ app.get('/comments/:id', (req, res) => {
     });
 });
 
-app.post('/comments/:id', (req, res) => {
+app.post('/comments/submit/', (req, res) => {
 
-    let id = req.params;
-    let name = req.body;
+    let content = req.body;
 
-    if (!name) {
-        res.status(418).send({ message: 'No name provided.' })
+    if (!content) {
+        res.status(418).send({ message: 'No message provided.' })
     }
+    else {
+        res.status(200).send()
+    }
+
 
     res.send({
         artist: name,

@@ -87,7 +87,42 @@
       </div>
     </div>
 
-    <!-- sorting menu -->
+    <!-- detailed cards -->
+    <div class="modal fade" id="detailedPage" tabindex="-1" aria-labelledby="detailedPageLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="detailedPageLabel">Name</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h2 class="fs-5">Genre</h2>
+            <p id="genre">Placeholder</p>
+            <h3 class="fs-5 mt-4">Description</h3>
+            <p id="description">Placeholder</p>
+            <h3 class="fs-5 mt-4">Most Popular Song</h3>
+            <p id="song">Placeholder</p>
+            <h4 class="fs-5 mt-4">Net Worth</h4>
+            <p id="networth">Placeholder</p>
+            <h4 class="fs-5 mt-4">Comments</h4>
+            <div id="comments"></div>
+            <h4 class="fs-5 mt-4">Want to leave a comment?</h4>
+            <div class="mb-3">
+              <label for="usernameInput" class="form-label">Name</label>
+              <input type="query" class="form-control" id="usernameInput" placeholder="Anonymous">
+              <label for="commentInput" class="form-label">Comment</label>
+              <textarea type="query" class="form-control" id="commentInput" rows="3"></textarea>
+              <button type="button" class="btn btn-success mt-3 commentbtn" id="commentSubmit">Submit</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>    
+
+    <!-- search menu -->
     <div class="offcanvas offcanvas-start bg-secondary-subtle" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="sidemenu" aria-labelledby="sideMenuLabel">
       <div class="offcanvas-header bg-secondary">
         <h3 class="offcanvas-title" id="sideMenuLabel">Menu</h3>
@@ -97,21 +132,24 @@
         <h4 class="mb-3">Filters:</h4>
         <div class="mb-3">
           <label class="form-label ms-auto">Genre:</label>
-          <button type="button" class="btn btn-secondary ms-auto">Pop</button>
-          <button type="button" class="btn btn-secondary ms-auto">Rock</button>
-          <button type="button" class="btn btn-secondary ms-auto">R&B</button>
-          <button type="button" class="btn btn-secondary ms-auto">Other</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="Pop">Pop</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="Rock">Rock</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="R&B">R&B</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="Other">Other</button>
         </div>
         <div class="mb-3">
           <label class="form-label ms-auto">Net Worth:</label>
-          <button type="button" class="btn btn-secondary ms-auto">&lt;1M</button>
-          <button type="button" class="btn btn-secondary ms-auto">1M-10M</button>
-          <button type="button" class="btn btn-secondary ms-auto">&gt;10M</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="50m">&lt;$50M</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="75m">$50M-$100M</button>
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="100m">&gt;$100M</button>
         </div>
         <div class="mb-3">
           <label for="searchInput" class="form-label">Search</label>
           <input type="query" class="form-control" id="searchInput">
-          <button type="button" class="btn btn-success mt-3">Submit</button>
+          <button type="button" class="btn btn-success mt-3 filterbtn" id="textFilter">Submit</button>
+        </div>
+        <div class="mb-3">
+          <button type="button" class="btn btn-secondary ms-auto filterbtn" id="Clr">Clear All</button>
         </div>
       </div>
     </div>
