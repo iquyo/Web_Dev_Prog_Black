@@ -26,17 +26,8 @@ function readData(path, callback) {
     });
 };
 
-// readData(path.join(__dirname, 'Data/data_artists.json'), (err, artist) => {
-//     if (err) {
-//         console.log(err);
-//         return;
-//     }
-//     console.log(artist[0].name);
-// });
-
 
 app.get('/artists', (req, res) => {
-    // return all items in json file sorted by id. this is used to load all cards when booting up the app. cards only include name and image.
     readData(path.join(__dirname, 'Data/data_artists.json'), (err, artists) => {
         if (err) {
             res.status(500).send("Error: " + err);
@@ -82,7 +73,6 @@ app.post('/artists/:id', (req, res) => {
 
 
 app.get('/comments', (req, res) => {
-    // return all items in json file sorted by id. this is used to load all cards when booting up the app. cards only include name and image.
     readData(path.join(__dirname, 'Data/data_comments.json'), (err, comments) => {
         if (err) {
             res.status(500).send("Error: " + err);
@@ -110,6 +100,7 @@ app.get('/comments/:id', (req, res) => {
     });
 });
 
+// WORK ON POST REQUESTS, THEN LINK WITH CLIENT SIDE AND FINISH UP WITH THE DISCONNECT FEATURE
 app.post('/comments/submit/', (req, res) => {
 
     let content = req.body;

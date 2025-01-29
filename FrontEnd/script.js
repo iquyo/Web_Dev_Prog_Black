@@ -109,7 +109,7 @@ function editDetailedModal(name, song, networth, genre, description, imagesource
     imagelabel.innerHTML = "<img src='" + imagesource + "' class='img-fluid' id='cardImage'>"
     attrlabel.innerHTML = "<p id=attrlabel>" + imageattr + "</p>"
     songlabel.innerHTML = "<p id='song'>" + song + "</p>"
-    networthlabel.innerHTML = "<p id='networth'>" + networth + "</p>"
+    networthlabel.innerHTML = "<p id='networth'>$" + networth + "</p>"
     genrelabel.innerHTML = "<p id='genre'>" + genre + "</p>"
     descriptionlabel.innerHTML = "<p id='description'>" + description + "</p>"
 }
