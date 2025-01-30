@@ -24,7 +24,6 @@
         <button type="button" class="btn btn-warning ms-3" data-bs-toggle="modal" data-bs-target="#uploadPage">
           Upload
         </button>
-        <a class="nav-link ms-3" aria-current="page" href="#">Catalogue</a>
         <a class="navbar-brand ms-3" href="#">
           Top British Pop Artists
           <img src="Media/icon.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
@@ -54,7 +53,6 @@
             <p>Frontend framework built using Bootstrap.</p>
             <p>All images requiring attribution licensed under the Creative Commons Attribution 2.0 Generic license from Wikimedia Commons.</p>
             <p>For more information about licensing please refer to each artist's dedicated page.</p>
-            <p>Built by: Chuqian (Sam) Xue</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -69,20 +67,24 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="uploadPageLabel">Upload Your Artist</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close filterbtn" id="Null" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <h2 class="fs-5">Name</h2>
-            <p>Placeholder</p>
-            <h2 class="fs-5">Image</h2>
-            <p>Placeholder.</p>
-            <h2 class="fs-5">Popular Songs</h2>
-            <p>Placeholder.</p>
-            <h2 class="fs-5">Short Description</h2>
-            <p>Placeholder.</p>
+            <h2 class="fs-5 my-3">Name</h2>
+            <input type="query" class="form-control" id="artistNameInput">
+            <h2 class="fs-5 my-3">Most Popular Song</h2>
+            <input type="query" class="form-control" id="songInput">
+            <h2 class="fs-5 my-3">Net Worth</h2>
+            <input type="query" class="form-control" id="networthInput">
+            <h2 class="fs-5 my-3">Genre</h2>
+            <input type="query" class="form-control" id="genreInput">
+            <h2 class="fs-5 my-3">Description</h2>
+            <textarea type="query" class="form-control" id="descriptionInput" rows="3"></textarea>
+            <button type="button" class="btn btn-success mt-3 artistbtn" id="artistSubmit">Submit</button>
+            <p class="m-2">Due to repeated image licensing offenses, users may no longer upload images of their artists, thank you for your understanding.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary filterbtn" id="None" data-bs-dismiss="modal">Close</button>
           </div>
         </div>
       </div>

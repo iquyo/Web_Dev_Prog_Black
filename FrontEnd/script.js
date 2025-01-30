@@ -66,7 +66,6 @@ function editDetailedModal(name, song, networth, genre, description, imagesource
     let descriptionlabel = document.getElementById('description');
     let commentslabel = document.getElementById('comments');
 
-    console.log(imagelabel)
     commentslabel.innerHTML = "<div id='comments'></div>"
     const commentRequest = new XMLHttpRequest();
     commentRequest.open('GET', '/comments')
@@ -96,7 +95,7 @@ function editDetailedModal(name, song, networth, genre, description, imagesource
                 }
             })
             if (no_comments == true) {
-                commentslabel.innerHTML = "<div id='comments'>No one has posted anything yet, be the first to share your thoughts!</div>"
+                commentslabel.innerHTML = "<div id='comments'><p id='tempcomment'>No one has posted anything yet, be the first to share your thoughts!</p></div>"
             }
         }
         else{
@@ -119,23 +118,86 @@ window.addEventListener("load", function() {
 
     const filter_buttons = document.querySelectorAll('.filterbtn');
     const comment_submit_button = document.getElementById('commentSubmit');
+    const artist_submit_button = this.document.getElementById('artistSubmit')
     var card_buttons = document.querySelectorAll('.cardbtn');
 
-    comment_submit_button.addEventListener('click', (event) => {
-        const uploadCommentRequest = new XMLHttpRequest();
-        uploadCommentRequest.open('POST', '/comments/submit');
 
-        // START HERE!! CONTINUE MAKING THE COMMENT UPLOAD SYSTEM AND ALSO FLESH OUT BACK END POST REQUESTS TO WRITE TO JSON
-        uploadCommentRequest.onload = function() {
-            console.log(uploadCommentRequest)
-            if (uploadCommentRequest.status == 200) {
-                alert(success)
+    artist_submit_button.addEventListener('click', (event) => {
+
+        // Get data from input fields and reset them to empty
+        let namefield = document.getElementById('artistNameInput');
+        let songfield = document.getElementById('songInput');
+        let networthfield = document.getElementById('networthInput');
+        let genrefield = document.getElementById('genreInput');
+        let descriptionfield = document.getElementById('descriptionInput');
+        let postInput = {
+            "name": namefield.value,
+            "song": songfield.value,
+            "networth": networthfield.value,
+            "genre": genrefield.value,
+            "description": descriptionfield.value
+        }
+        namefield.value = ""
+        songfield.value = ""
+        networthfield.value = ""
+        genrefield.value = ""
+        descriptionfield.value = ""
+
+        let postOutput = JSON.stringify(postInput);
+        const uploadArtistRequest = new XMLHttpRequest();
+        uploadArtistRequest.open('POST', '/artists/');
+        uploadArtistRequest.setRequestHeader('Content-Type', 'application/json');
+
+        uploadArtistRequest.onload = function() {
+            let postResponse = JSON.parse(uploadArtistRequest.response);
+            if (uploadArtistRequest.status == 201) {
+                alert(postResponse.message)
             }
             else {
-                console.log(toString(uploadCommentRequest.status))
-                console.log(uploadCommentRequest.statusText)
+                alert(postResponse.message)
             }
         }
+        uploadArtistRequest.send(postOutput)
+
+    })
+
+
+    comment_submit_button.addEventListener('click', (event) => {
+
+        let commentslabel = document.getElementById('comments');
+        let tempcomment = document.getElementById('tempcomment');
+        let commentFor = document.getElementById("detailedPageLabel").innerText;
+        let userField = document.getElementById("usernameInput");
+        let commentField = document.getElementById("commentInput");
+        let postInput = {
+            "for": commentFor,
+            "author": userField.value,
+            "content": commentField.value
+        };
+        userField.value = "";
+        commentField.value = "";
+
+        let postOutput = JSON.stringify(postInput);
+        const uploadCommentRequest = new XMLHttpRequest();
+        uploadCommentRequest.open('POST', '/comments/');
+        uploadCommentRequest.setRequestHeader('Content-Type', 'application/json');
+
+        uploadCommentRequest.onload = function() {
+            let postResponse = JSON.parse(uploadCommentRequest.response);
+            if (uploadCommentRequest.status == 201) {
+                if (tempcomment) {
+                    tempcomment.innerHTML = ""
+                }
+                const outputComment = document.createElement("p");
+                outputComment.innerHTML = "<p>" + postResponse.author + ": " + postResponse.content + "</p>"
+                commentslabel.appendChild(outputComment);
+                alert(postResponse.message)
+            }
+            else {
+                alert(postResponse.message)
+            }
+        }
+        uploadCommentRequest.send(postOutput)
     })
 
     filter_buttons.forEach(filter_button => {
@@ -151,13 +213,20 @@ window.addEventListener("load", function() {
                     filtered_catalogue = JSON.parse(filteredRequest.responseText);
             
                     for (const artist of filtered_catalogue) {
-                        if (filter_button.id == artist.genre) {
+                        if (filter_button.id == "None" || filter_button.id == "Null") {
                             let newCard = createNewCard(artist.name, artist.image, artist.ID);
                     
                             const artist_cards = document.getElementById("artist_cards");
                             artist_cards.appendChild(newCard);
                         }
                         else {
+                            if (filter_button.id == artist.genre) {
+                                let newCard = createNewCard(artist.name, artist.image, artist.ID);
+                        
+                                const artist_cards = document.getElementById("artist_cards");
+                                artist_cards.appendChild(newCard);
+                            }
+
                             if (filter_button.id == "50m" && artist.networth < 50000000) {
                                 let newCard = createNewCard(artist.name, artist.image, artist.ID);
 
